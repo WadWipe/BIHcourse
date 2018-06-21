@@ -1,0 +1,20 @@
+#####
+#calculate binomial model for dead patients and age
+#####
+
+```{r,message=FALSE}
+library(arm)
+library(tidyverse)
+source("read_in_before_exercise.R")
+```
+```{r}
+m_1<-glm(data=my_data,DEAD_bin~AGE,family="binomial")
+summary(m_1)
+exp(coef(m_1))
+invlogit(predict(m_1))
+```
+
+
+
+
+
